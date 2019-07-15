@@ -18,6 +18,38 @@ bl_info = {
 package_dir = os.path.dirname(os.path.abspath(__file__))
 
 materials = {
+    "Concrete07": {
+        "color": package_dir + "/assets/cc0textures.com/[2K]Concrete07/Concrete07_col.jpg",
+        "metallic": "",
+        "roughness": package_dir + "/assets/cc0textures.com/[2K]Concrete07/Concrete07_rgh.jpg",
+        "normal": package_dir + "/assets/cc0textures.com/[2K]Concrete07/Concrete07_nrm.jpg",
+        "displacement": package_dir + "/assets/cc0textures.com/[2K]Concrete07/Concrete07_disp.jpg",
+        "ambient_occlusion": package_dir + "/assets/cc0textures.com/[2K]Concrete07/Concrete07_AO.jpg"
+    },
+    "Fabric02": {
+        "color": package_dir + "/assets/cc0textures.com/[2K]Fabric02/Fabric02_col.jpg",
+        "metallic": "",
+        "roughness": package_dir + "/assets/cc0textures.com/[2K]Fabric02/Fabric02_rgh.jpg",
+        "normal": package_dir + "/assets/cc0textures.com/[2K]Fabric02/Fabric02_nrm.jpg",
+        "displacement": package_dir + "/assets/cc0textures.com/[2K]Fabric02/Fabric02_disp.jpg",
+        "ambient_occlusion": "",
+    },
+    "Leather05": {
+        "color": package_dir + "/assets/cc0textures.com/[2K]Leather05/Leather05_col.jpg",
+        "metallic": "",
+        "roughness": package_dir + "/assets/cc0textures.com/[2K]Leather05/Leather05_rgh.jpg",
+        "normal": package_dir + "/assets/cc0textures.com/[2K]Leather05/Leather05_nrm.jpg",
+        "displacement": package_dir + "/assets/cc0textures.com/[2K]Leather05/Leather05_disp.jpg",
+        "ambient_occlusion": "",
+    },
+    "Marble01": {
+        "color": package_dir + "/assets/cc0textures.com/[2K]Marble01/Marble01_col.jpg",
+        "metallic": "",
+        "roughness": package_dir + "/assets/cc0textures.com/[2K]Marble01/Marble01_rgh.jpg",
+        "normal": package_dir + "/assets/cc0textures.com/[2K]Marble01/Marble01_nrm.jpg",
+        "displacement": package_dir + "/assets/cc0textures.com/[2K]Marble01/Marble01_disp.jpg",
+        "ambient_occlusion": "",
+    },
     "Metal07": {
         "color": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_col.jpg",
         "metallic": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_met.jpg",
