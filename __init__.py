@@ -1,4 +1,5 @@
 import bpy
+import os
 
 bl_info = {
     "name": "CC0 Assets Loader",
@@ -12,6 +13,19 @@ bl_info = {
     "wiki_url": "https://github.com/yuki-koyama/cc0-assets-loader",
     "tracker_url": "https://github.com/yuki-koyama/cc0-assets-loader/issues",
     "category": "Material"
+}
+
+package_dir = os.path.dirname(os.path.abspath(__file__))
+
+materials = {
+    "Metal07": {
+        "color": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_col.jpg",
+        "metallic": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_met.jpg",
+        "roughness": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_rgh.jpg",
+        "normal": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_nrm.jpg",
+        "displacement": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_disp.jpg",
+        "ambient_occlusion": "",
+    },
 }
 
 
