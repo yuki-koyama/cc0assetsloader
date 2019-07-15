@@ -110,6 +110,12 @@ class CC0_ASSETS_LOADER_OP_AddMetal07Material(bpy.types.Operator):
     bl_options = {"REGISTER", "UNDO"}
 
     def execute(self, context):
+        name = "Metal07"
+
+        if bpy.data.materials.find(name) >= 0:
+            self.report({'ERROR'}, name + " is already defined in the materials data block.")
+            return {'CANCELLED'}
+
         return {'FINISHED'}
 
 
