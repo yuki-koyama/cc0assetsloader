@@ -116,6 +116,18 @@ class CC0_ASSETS_LOADER_OP_AddMetal07Material(bpy.types.Operator):
             self.report({'ERROR'}, name + " is already defined in the materials data block.")
             return {'CANCELLED'}
 
+        new_material = bpy.data.materials.new(name)
+        new_material.use_nodes = True
+        clean_nodes(new_material.node_tree.nodes)
+
+        build_pbr_textured_nodes(new_material.node_tree,
+                                 color_texture_path=materials[name]["color"],
+                                 metallic_texture_path=materials[name]["metallic"],
+                                 roughness_texture_path=materials[name]["roughness"],
+                                 normal_texture_path=materials[name]["normal"],
+                                 displacement_texture_path=materials[name]["displacement"],
+                                 ambient_occlusion_texture_path=materials[name]["ambient_occlusion"])
+
         return {'FINISHED'}
 
 
