@@ -307,47 +307,63 @@ def clean_nodes(nodes):
         nodes.remove(node)
 
 
-class CC0_ASSETS_LOADER_OP_AddMetal07Material(bpy.types.Operator):
-    bl_idname = "node.add_metal07_material"
-    bl_label = "Add Metal07 Material"
-    bl_description = "Add Metal07 material to the data block"
+class AddMaterialOperator(bpy.types.Operator):
     bl_options = {"REGISTER", "UNDO"}
 
-    def execute(self, context):
-        name = "Metal07"
+    material_name = None
 
-        if bpy.data.materials.find(name) >= 0:
-            self.report({'ERROR'}, name + " is already defined in the materials data block.")
+    def execute(self, context):
+        if bpy.data.materials.find(self.material_name) >= 0:
+            self.report({'ERROR'}, self.material_name + " is already defined in the materials data block.")
             return {'CANCELLED'}
 
-        new_material = bpy.data.materials.new(name)
+        new_material = bpy.data.materials.new(self.material_name)
         new_material.use_nodes = True
         clean_nodes(new_material.node_tree.nodes)
 
         build_pbr_textured_nodes(new_material.node_tree,
-                                 color_texture_path=materials[name]["color"],
-                                 metallic_texture_path=materials[name]["metallic"],
-                                 roughness_texture_path=materials[name]["roughness"],
-                                 normal_texture_path=materials[name]["normal"],
-                                 displacement_texture_path=materials[name]["displacement"],
-                                 ambient_occlusion_texture_path=materials[name]["ambient_occlusion"])
+                                 color_texture_path=materials[self.material_name]["color"],
+                                 metallic_texture_path=materials[self.material_name]["metallic"],
+                                 roughness_texture_path=materials[self.material_name]["roughness"],
+                                 normal_texture_path=materials[self.material_name]["normal"],
+                                 displacement_texture_path=materials[self.material_name]["displacement"],
+                                 ambient_occlusion_texture_path=materials[self.material_name]["ambient_occlusion"])
 
         return {'FINISHED'}
 
 
+operator_classes = []
+for material_name in materials.keys():
+    operator_class = type(
+        "CC0_ASSETS_LOADER_OP_Add" + material_name + "Material", (AddMaterialOperator, ), {
+            "material_name": material_name,
+            "bl_idname": "node.add_" + material_name.lower() + "_material",
+            "bl_label": "Add " + material_name + " Material",
+            "bl_description": "Add " + material_name + " material to the data block",
+        })
+
+    operator_classes.append(operator_class)
+
+
 def menu_func(self, context):
     self.layout.separator()
-    self.layout.operator(CC0_ASSETS_LOADER_OP_AddMetal07Material.bl_idname)
+
+    for operator_class in operator_classes:
+        self.layout.operator(operator_class.bl_idname)
 
 
 def register():
-    bpy.utils.register_class(CC0_ASSETS_LOADER_OP_AddMetal07Material)
+    for operator_class in operator_classes:
+        bpy.utils.register_class(operator_class)
+
     bpy.types.NODE_MT_add.append(menu_func)
 
 
 def unregister():
     bpy.types.NODE_MT_add.remove(menu_func)
-    bpy.utils.unregister_class(CC0_ASSETS_LOADER_OP_AddMetal07Material)
+
+    for operator_class in operator_classes:
+        bpy.utils.unregister_class(operator_class)
 
 
 if __name__ == "__main__":
