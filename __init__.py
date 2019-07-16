@@ -16,46 +16,47 @@ bl_info = {
 }
 
 package_dir = os.path.dirname(os.path.abspath(__file__))
+cc0textures_dir = package_dir + "/assets/cc0textures.com"
 
 materials = {
     "Concrete07": {
-        "color": package_dir + "/assets/cc0textures.com/[2K]Concrete07/Concrete07_col.jpg",
+        "color": cc0textures_dir + "/[2K]Concrete07/Concrete07_col.jpg",
         "metallic": "",
-        "roughness": package_dir + "/assets/cc0textures.com/[2K]Concrete07/Concrete07_rgh.jpg",
-        "normal": package_dir + "/assets/cc0textures.com/[2K]Concrete07/Concrete07_nrm.jpg",
-        "displacement": package_dir + "/assets/cc0textures.com/[2K]Concrete07/Concrete07_disp.jpg",
-        "ambient_occlusion": package_dir + "/assets/cc0textures.com/[2K]Concrete07/Concrete07_AO.jpg"
+        "roughness": cc0textures_dir + "/[2K]Concrete07/Concrete07_rgh.jpg",
+        "normal": cc0textures_dir + "/[2K]Concrete07/Concrete07_nrm.jpg",
+        "displacement": cc0textures_dir + "/[2K]Concrete07/Concrete07_disp.jpg",
+        "ambient_occlusion": cc0textures_dir + "/[2K]Concrete07/Concrete07_AO.jpg"
     },
     "Fabric02": {
-        "color": package_dir + "/assets/cc0textures.com/[2K]Fabric02/Fabric02_col.jpg",
+        "color": cc0textures_dir + "/[2K]Fabric02/Fabric02_col.jpg",
         "metallic": "",
-        "roughness": package_dir + "/assets/cc0textures.com/[2K]Fabric02/Fabric02_rgh.jpg",
-        "normal": package_dir + "/assets/cc0textures.com/[2K]Fabric02/Fabric02_nrm.jpg",
-        "displacement": package_dir + "/assets/cc0textures.com/[2K]Fabric02/Fabric02_disp.jpg",
+        "roughness": cc0textures_dir + "/[2K]Fabric02/Fabric02_rgh.jpg",
+        "normal": cc0textures_dir + "/[2K]Fabric02/Fabric02_nrm.jpg",
+        "displacement": cc0textures_dir + "/[2K]Fabric02/Fabric02_disp.jpg",
         "ambient_occlusion": "",
     },
     "Leather05": {
-        "color": package_dir + "/assets/cc0textures.com/[2K]Leather05/Leather05_col.jpg",
+        "color": cc0textures_dir + "/[2K]Leather05/Leather05_col.jpg",
         "metallic": "",
-        "roughness": package_dir + "/assets/cc0textures.com/[2K]Leather05/Leather05_rgh.jpg",
-        "normal": package_dir + "/assets/cc0textures.com/[2K]Leather05/Leather05_nrm.jpg",
-        "displacement": package_dir + "/assets/cc0textures.com/[2K]Leather05/Leather05_disp.jpg",
+        "roughness": cc0textures_dir + "/[2K]Leather05/Leather05_rgh.jpg",
+        "normal": cc0textures_dir + "/[2K]Leather05/Leather05_nrm.jpg",
+        "displacement": cc0textures_dir + "/[2K]Leather05/Leather05_disp.jpg",
         "ambient_occlusion": "",
     },
     "Marble01": {
-        "color": package_dir + "/assets/cc0textures.com/[2K]Marble01/Marble01_col.jpg",
+        "color": cc0textures_dir + "/[2K]Marble01/Marble01_col.jpg",
         "metallic": "",
-        "roughness": package_dir + "/assets/cc0textures.com/[2K]Marble01/Marble01_rgh.jpg",
-        "normal": package_dir + "/assets/cc0textures.com/[2K]Marble01/Marble01_nrm.jpg",
-        "displacement": package_dir + "/assets/cc0textures.com/[2K]Marble01/Marble01_disp.jpg",
+        "roughness": cc0textures_dir + "/[2K]Marble01/Marble01_rgh.jpg",
+        "normal": cc0textures_dir + "/[2K]Marble01/Marble01_nrm.jpg",
+        "displacement": cc0textures_dir + "/[2K]Marble01/Marble01_disp.jpg",
         "ambient_occlusion": "",
     },
     "Metal07": {
-        "color": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_col.jpg",
-        "metallic": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_met.jpg",
-        "roughness": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_rgh.jpg",
-        "normal": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_nrm.jpg",
-        "displacement": package_dir + "/assets/cc0textures.com/[2K]Metal07/Metal07_disp.jpg",
+        "color": cc0textures_dir + "/[2K]Metal07/Metal07_col.jpg",
+        "metallic": cc0textures_dir + "/[2K]Metal07/Metal07_met.jpg",
+        "roughness": cc0textures_dir + "/[2K]Metal07/Metal07_rgh.jpg",
+        "normal": cc0textures_dir + "/[2K]Metal07/Metal07_nrm.jpg",
+        "displacement": cc0textures_dir + "/[2K]Metal07/Metal07_disp.jpg",
         "ambient_occlusion": "",
     },
 }
