@@ -16,6 +16,9 @@ bl_info = {
     "category": "Material"
 }
 
+################################################################################
+# Material definition
+################################################################################
 
 materials = {}
 package_dir = os.path.dirname(os.path.abspath(__file__))
@@ -37,6 +40,9 @@ for dir_path in dir_paths:
 
     materials[name] = texture_paths
 
+################################################################################
+# Utility functions
+################################################################################
 
 
 def arrange_nodes(node_tree, verbose=False):
@@ -282,6 +288,11 @@ def build_pbr_textured_nodes(node_tree,
 def clean_nodes(nodes):
     for node in nodes:
         nodes.remove(node)
+
+
+################################################################################
+# Operators
+################################################################################
 
 
 class AddMaterialOperator(bpy.types.Operator):
