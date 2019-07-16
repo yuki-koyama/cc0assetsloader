@@ -321,7 +321,7 @@ class AddMaterialOperator(bpy.types.Operator):
 
 
 operator_classes = []
-for material_name in materials.keys():
+for material_name in sorted(materials.keys()):
     operator_class = type(
         "CC0_ASSETS_LOADER_OP_Add" + material_name + "Material", (AddMaterialOperator, ), {
             "material_name": material_name,
