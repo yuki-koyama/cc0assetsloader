@@ -326,21 +326,30 @@ for material_name in sorted(materials.keys()):
         "CC0_ASSETS_LOADER_OP_Add" + material_name + "Material", (AddMaterialOperator, ), {
             "material_name": material_name,
             "bl_idname": "node.add_" + material_name.lower() + "_material",
-            "bl_label": "Add " + material_name + " Material",
+            "bl_label": material_name,
             "bl_description": "Add " + material_name + " material to the data block",
         })
 
     operator_classes.append(operator_class)
 
 
+class CC0_ASSETS_LOADER_MT_Menu(bpy.types.Menu):
+    bl_idname = "CC0_ASSETS_LOADER_MT_Menu"
+    bl_label = "CC0 Textured Materials"
+    bl_description = "Add predefined CC0 textured materials to the data block"
+
+    def draw(self, context):
+        for operator_class in operator_classes:
+            self.layout.operator(operator_class.bl_idname)
+
+
 def menu_func(self, context):
     self.layout.separator()
-
-    for operator_class in operator_classes:
-        self.layout.operator(operator_class.bl_idname)
+    self.layout.menu(CC0_ASSETS_LOADER_MT_Menu.bl_idname)
 
 
 def register():
+    bpy.utils.register_class(CC0_ASSETS_LOADER_MT_Menu)
     for operator_class in operator_classes:
         bpy.utils.register_class(operator_class)
 
@@ -352,6 +361,7 @@ def unregister():
 
     for operator_class in operator_classes:
         bpy.utils.unregister_class(operator_class)
+    bpy.utils.unregister_class(CC0_ASSETS_LOADER_MT_Menu)
 
 
 if __name__ == "__main__":
