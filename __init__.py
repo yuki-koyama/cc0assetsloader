@@ -129,7 +129,7 @@ def clean_nodes(nodes):
         nodes.remove(node)
 
 
-def build_pbr_textured_nodes_from_name(material_name):
+def build_pbr_textured_nodes_from_name(material_name, scale=(1.0, 1.0, 1.0)):
     new_material = bpy.data.materials.new(material_name)
     new_material.use_nodes = True
     clean_nodes(new_material.node_tree.nodes)
@@ -140,7 +140,8 @@ def build_pbr_textured_nodes_from_name(material_name):
                              roughness_texture_path=materials[material_name]["roughness"],
                              normal_texture_path=materials[material_name]["normal"],
                              displacement_texture_path=materials[material_name]["displacement"],
-                             ambient_occlusion_texture_path=materials[material_name]["ambient_occlusion"])
+                             ambient_occlusion_texture_path=materials[material_name]["ambient_occlusion"],
+                             scale=scale)
 
 
 ################################################################################
