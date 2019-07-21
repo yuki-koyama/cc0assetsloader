@@ -126,6 +126,19 @@ def clean_nodes(nodes):
         nodes.remove(node)
 
 
+def build_pbr_textured_nodes_from_name(material_name):
+    new_material = bpy.data.materials.new(material_name)
+    new_material.use_nodes = True
+    clean_nodes(new_material.node_tree.nodes)
+
+    build_pbr_textured_nodes(new_material.node_tree,
+                             color_texture_path=materials[material_name]["color"],
+                             metallic_texture_path=materials[material_name]["metallic"],
+                             roughness_texture_path=materials[material_name]["roughness"],
+                             normal_texture_path=materials[material_name]["normal"],
+                             displacement_texture_path=materials[material_name]["displacement"],
+                             ambient_occlusion_texture_path=materials[material_name]["ambient_occlusion"])
+
 ################################################################################
 # Operators
 ################################################################################
@@ -141,17 +154,7 @@ class AddMaterialOperator(bpy.types.Operator):
             self.report({'ERROR'}, self.material_name + " is already defined in the materials data block.")
             return {'CANCELLED'}
 
-        new_material = bpy.data.materials.new(self.material_name)
-        new_material.use_nodes = True
-        clean_nodes(new_material.node_tree.nodes)
-
-        build_pbr_textured_nodes(new_material.node_tree,
-                                 color_texture_path=materials[self.material_name]["color"],
-                                 metallic_texture_path=materials[self.material_name]["metallic"],
-                                 roughness_texture_path=materials[self.material_name]["roughness"],
-                                 normal_texture_path=materials[self.material_name]["normal"],
-                                 displacement_texture_path=materials[self.material_name]["displacement"],
-                                 ambient_occlusion_texture_path=materials[self.material_name]["ambient_occlusion"])
+        build_pbr_textured_nodes_from_name(self.material_name)
 
         return {'FINISHED'}
 
