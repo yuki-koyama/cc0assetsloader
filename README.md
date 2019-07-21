@@ -17,6 +17,10 @@ A Blender add-on for loading CC0 assets (PBR textures, HDR images, etc.)
 
 - 2.80
 
+## Dependencies
+
+- [nodelayout](https://github.com/yuki-koyama/nodelayout) (included as a git submodule)
+
 ## License
 
 All the Python codes (`*.py`) are distributed under GPLv3. The third-party asset files (`assets/*`) are distributed under CC0.
