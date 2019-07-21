@@ -11,8 +11,8 @@ bl_info = {
     "description": "Loading CC0 Assets",
     "warning": "",
     "support": "TESTING",
-    "wiki_url": "https://github.com/yuki-koyama/cc0-assets-loader",
-    "tracker_url": "https://github.com/yuki-koyama/cc0-assets-loader/issues",
+    "wiki_url": "https://github.com/yuki-koyama/cc0assetsloader",
+    "tracker_url": "https://github.com/yuki-koyama/cc0assetsloader/issues",
     "category": "Material"
 }
 

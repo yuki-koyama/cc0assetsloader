@@ -20,9 +20,9 @@ A Blender add-on for loading CC0 assets (PBR textures, HDR images, etc.)
 ## Creating a ZIP File for Distribution/Installation
 
 ```
-git clone https://github.com/yuki-koyama/cc0-assets-loader.git --recursive
-zip -r cc0-assets-loader.zip cc0-assets-loader -x *.git*
-rm -fr cc0-assets-loader
+git clone https://github.com/yuki-koyama/cc0assetsloader.git --recursive
+zip -r cc0assetsloader.zip cc0assetsloader -x *.git*
+rm -fr cc0assetsloader
 ```
 
 ## Dependencies
