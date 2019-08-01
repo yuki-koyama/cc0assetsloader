@@ -5,7 +5,7 @@ import os
 bl_info = {
     "name": "CC0 Assets Loader",
     "author": "Yuki Koyama",
-    "version": (0, 0, 0),
+    "version": (0, 1),
     "blender": (2, 80, 0),
     "location": "Shader Editor > Add",
     "description": "Loading CC0 Assets",
