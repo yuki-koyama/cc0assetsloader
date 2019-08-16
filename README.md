@@ -27,6 +27,14 @@ zip -r cc0assetsloader.zip cc0assetsloader -x *.git*
 rm -fr cc0assetsloader
 ```
 
+## Download
+
+ZIP file created using the latest release (v0.1): <https://github.com/yuki-koyama/cc0assetsloader/releases/download/0-1/cc0assetsloader.zip>
+
+## Known Issues
+
+This repository is hosted on GitHub and uses its Git LFS functionality. The bandwidth is limited to 1.0 GB/month in its free plan, so cloning this repository probably fails due to the bandwidth limit. I am looking for easy and sustainable solutions.
+
 ## Dependencies
 
 - [nodelayout](https://github.com/yuki-koyama/nodelayout) (included as a git submodule)
