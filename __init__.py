@@ -1,6 +1,7 @@
 import bpy
 import glob
 import os
+from typing import Tuple
 
 bl_info = {
     "name": "CC0 Assets Loader",
@@ -50,7 +51,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import nodelayout
 
 
-def create_texture_node(node_tree, path, is_color_data):
+def create_texture_node(node_tree: bpy.types.NodeTree, path: str, is_color_data: bool) -> bpy.types.Node:
     # Instantiate a new texture image node
     texture_node = node_tree.nodes.new(type='ShaderNodeTexImage')
 
@@ -67,14 +68,14 @@ def create_texture_node(node_tree, path, is_color_data):
     return texture_node
 
 
-def build_pbr_textured_nodes(node_tree,
-                             color_texture_path="",
-                             metallic_texture_path="",
-                             roughness_texture_path="",
-                             normal_texture_path="",
-                             displacement_texture_path="",
-                             ambient_occlusion_texture_path="",
-                             scale=(1.0, 1.0, 1.0)):
+def build_pbr_textured_nodes(node_tree: bpy.types.NodeTree,
+                             color_texture_path: str = "",
+                             metallic_texture_path: str = "",
+                             roughness_texture_path: str = "",
+                             normal_texture_path: str = "",
+                             displacement_texture_path: str = "",
+                             ambient_occlusion_texture_path: str = "",
+                             scale: Tuple[float, float, float] = (1.0, 1.0, 1.0)) -> None:
     output_node = node_tree.nodes.new(type='ShaderNodeOutputMaterial')
     principled_node = node_tree.nodes.new(type='ShaderNodeBsdfPrincipled')
     node_tree.links.new(principled_node.outputs['BSDF'], output_node.inputs['Surface'])
@@ -124,12 +125,12 @@ def build_pbr_textured_nodes(node_tree,
     nodelayout.arrange_nodes(node_tree, use_current_layout_as_initial_guess=False)
 
 
-def clean_nodes(nodes):
+def clean_nodes(nodes: bpy.types.Nodes) -> None:
     for node in nodes:
         nodes.remove(node)
 
 
-def build_pbr_textured_nodes_from_name(material_name, scale=(1.0, 1.0, 1.0)):
+def build_pbr_textured_nodes_from_name(material_name: str, scale: Tuple[float, float, float] = (1.0, 1.0, 1.0)) -> None:
     new_material = bpy.data.materials.new(material_name)
     new_material.use_nodes = True
     clean_nodes(new_material.node_tree.nodes)
