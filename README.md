@@ -26,7 +26,7 @@ Prerequisites: `git` and `git-lfs`
 
 ```
 git clone https://github.com/yuki-koyama/cc0assetsloader.git --recursive
-zip -r cc0assetsloader.zip cc0assetsloader -x *.git*
+zip -r cc0assetsloader.zip cc0assetsloader -x '*.git*'
 rm -fr cc0assetsloader
 ```
 
