@@ -18,7 +18,7 @@ A Blender add-on for loading CC0 assets (PBR textures, HDR images, etc.)
 
 ## Supported Blender Versions
 
-- 2.80
+- 2.80, 2.81, and later
 
 ## Creating a ZIP File for Distribution/Installation
 
@@ -32,7 +32,7 @@ rm -fr cc0assetsloader
 
 ## Download
 
-ZIP file created using the latest release (v0.1): <https://github.com/yuki-koyama/cc0assetsloader/releases/download/0-1/cc0assetsloader.zip>
+ZIP file created using the latest release (v0.2): <https://github.com/yuki-koyama/cc0assetsloader/releases/download/0-2/cc0assetsloader.zip>
 
 ## Known Issues
 
