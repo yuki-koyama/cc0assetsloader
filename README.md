@@ -2,6 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/yuki-koyama/cc0assetsloader)
 ![Blender](https://img.shields.io/badge/blender-2.80-brightgreen)
+![Blender](https://img.shields.io/badge/blender-2.81-brightgreen)
 
 A Blender add-on for loading CC0 assets (PBR textures, HDR images, etc.)
 
